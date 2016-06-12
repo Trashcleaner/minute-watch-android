@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Timer</string>
+
+    <string name="digit_1">1</string>
+    <string name="digit_2">2</string>
+    <string name="digit_3">3</string>
+    <string name="digit_4">4</string>
+    <string name="digit_5">5</string>
+    <string name="digit_6">6</string>
+    <string name="digit_7">7</string>
+    <string name="digit_8">8</string>
+    <string name="digit_9">9</string>
+    <string name="digit_0">0</string>
+
+    <string name="default_display_digit">0</string>
+    <string name="secs_text">s</string>
+    <string name="minute_text">m</string>
+    <string name="hours_text">h</string>
+    <string name="notification_message_running">"Time Remaining: "</string>
+    <string name="notification_message_paused">"Timer paused: "</string>
+    <string name="notification_message_finished">"Timer Complete!"</string>
+    <string name="notification_header">Buzz</string>
+    <string name="cd_ib_delete">Backspace</string>
+    <string name="cancel_timer_content_description">Stop Timer</string>
+    <string name="pause_timer_content_description">Pause Timer</string>
+    <string name="pause_timer">Pause</string>
+    <string name="play_timer">Play</string>
+    <string name="cancel_timer">Cancel</string>
+    <string name="replay_timer">Replay</string>
+    <string name="toast_no_input">No time has been entered</string>
+    <string name="toast_timer_running">Timer already running</string>
+</resources>
