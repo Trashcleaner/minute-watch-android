@@ -34,6 +34,7 @@ public class BackgroundCountdown extends Service {
     private BroadcastReceiver mBroadcastReceiver;
     private int mMilliseconds2Start;
     private int minuteCounter;
+    private Vibrator vibrator;
 
     @Override
     public void onCreate() {
@@ -79,6 +80,9 @@ public class BackgroundCountdown extends Service {
                 "MyWakelockTag");
         mWakeLock.acquire();
 
+        // Setup vibrator
+        vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+
         super.onCreate();
     }
 
@@ -113,9 +117,8 @@ public class BackgroundCountdown extends Service {
                 // Buzz every 60 seconds
                 if (minuteCounter == 60) {
 
-                    Vibrator v = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                     // Vibrate for 500 milliseconds
-                    v.vibrate(500);
+                    vibrator.vibrate(500);
 
                     minuteCounter = 0;
                 }
@@ -140,6 +143,10 @@ public class BackgroundCountdown extends Service {
                 sendResult(0);
 
                 stopForeground(true);
+
+                // Vibrate 3 times to end.
+                long[] pattern = {0, 1000, 500, 1000, 500, 1000};
+                vibrator.vibrate(pattern,-1);
 
                 // Notify user that timer has stopped
                 mNotificationManager.notify(1, Notifications.setupFinishedNotification(getApplicationContext()).build());
